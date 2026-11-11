@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+
+<div id="loader-scene">
+  <canvas id="loader-canvas"></canvas>
+  <div id="loader-core">
+    <div id="loader-rings">
+      <div class="lring" id="lr1"></div>
+      <div class="lring" id="lr2"></div>
+      <div class="lring" id="lr3"></div>
+    </div>
+    <div id="loader-logo">
+      <span class="ll-a">A</span><span class="ll-rest">RMA</span>
+    </div>
+    <div id="loader-bar-wrap">
+      <div id="loader-bar-track">
+        <div id="loader-bar-fill">
+          <div id="loader-bar-shine"></div>
+        </div>
+      </div>
+      <span id="loader-pct">0%</span>
+    </div>
+  </div>
+  <div id="morphed-ball"></div>
+  <canvas id="particle-canvas"></canvas>
+</div>
+
+
+<div id="app-scene">
+
+  <!-- Top-left logo -->
+  <div id="app-logo" data-page="home">
+    <span class="logo-a">A</span><span class="logo-rest">RMA</span>
+  </div>
+
+  <!-- Center nav pill -->
+  <nav id="navbar">
+    <div id="nav-inner">
+      <a href="#" class="nav-item" id="nav-home" data-page="home">ARMA</a>
+      <div class="nav-sep"></div>
+      <a href="#" class="nav-item" id="nav-team"  data-page="team">Projede Adı Geçenler</a>
+      <div class="nav-sep"></div>
+      <a href="#" class="nav-item" id="nav-about" data-page="about">Proje Hakkında</a>
+      <div id="nav-indicator"></div>
+    </div>
+  </nav>
+
+  <!-- ══ HOME ══ -->
+  <div id="page-home" class="page">
+    <canvas id="home-canvas"></canvas>
+    <div id="home-center">
+      <div id="home-hero">
+        <h1 id="home-title">
+          <div class="ht-text">
+            <span class="ht-a">A</span><span class="ht-rest">RMA</span>
+          </div>
+          <div id="home-title-line"></div>
+        </h1>
+        <div id="home-cta-group">
+          <button class="cta-btn cta-primary" id="cta-explore">
+            <span>Keşfet</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="cta-btn cta-ghost" id="cta-team">Ekibi Tanı</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEAM ══ -->
+  <div id="page-team" class="page">
+    <canvas id="team-canvas"></canvas>
+    <div class="page-content" id="team-content">
+      <h2 class="page-heading">Projede Adı Geçenler</h2>
+      <svg id="team-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+
+      <!-- POYRAZ -->
+      <div class="team-card" id="card-poyraz">
+        <div class="tc-head">
+          <div class="tc-avatar">P</div>
+          <div>
+            <div class="tc-name">Poyraz</div>
+          </div>
+        </div>
+        <div class="tc-slots">
+          <div class="slot"><span class="slot-tag">b1</span><span class="slot-val">— Site —</span></div>
+          <div class="slot"><span class="slot-tag">b2</span><span class="slot-val">— kameramanlık —</span></div>
+          <div class="slot"><span class="slot-tag">b3</span><span class="slot-val">— konuyu bulma —</span></div>
+          <div class="slot"><span class="slot-tag">b4</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b5</span><span class="slot-val">— yakında —</span></div>
+        </div>
+      </div>
+
+      <!-- RÜZGAR -->
+      <div class="team-card" id="card-ruzgar">
+        <div class="tc-head">
+          <div class="tc-avatar">R</div>
+          <div>
+            <div class="tc-name">Rüzgar</div>
+          </div>
+        </div>
+        <div class="tc-slots">
+          <div class="slot"><span class="slot-tag">b1</span><span class="slot-val">— site yapımında yardım —</span></div>
+          <div class="slot"><span class="slot-tag">b2</span><span class="slot-val">— konuya yardım —</span></div>
+          <div class="slot"><span class="slot-tag">b3</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b4</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b5</span><span class="slot-val">— yakında —</span></div>
+        </div>
+      </div>
+
+      <!-- M. SAİD -->
+      <div class="team-card" id="card-msaid">
+        <div class="tc-head">
+          <div class="tc-avatar">MS</div>
+          <div>
+            <div class="tc-name">M. Said</div>
+          </div>
+        </div>
+        <div class="tc-slots">
+          <div class="slot"><span class="slot-tag">b1</span><span class="slot-val">— konuya yardım —</span></div>
+          <div class="slot"><span class="slot-tag">b2</span><span class="slot-val">— reklam videosunda başrol —</span></div>
+          <div class="slot"><span class="slot-tag">b3</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b4</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b5</span><span class="slot-val">— yakında —</span></div>
+        </div>
+      </div>
+
+      <!-- MERT -->
+      <div class="team-card" id="card-mert">
+        <div class="tc-head">
+          <div class="tc-avatar">M</div>
+          <div>
+            <div class="tc-name">Mert</div>
+          </div>
+        </div>
+        <div class="tc-slots">
+          <div class="slot"><span class="slot-tag">b1</span><span class="slot-val">— konuya yardım —</span></div>
+          <div class="slot"><span class="slot-tag">b2</span><span class="slot-val">— yazı —</span></div>
+          <div class="slot"><span class="slot-tag">b3</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b4</span><span class="slot-val">— yakında —</span></div>
+          <div class="slot"><span class="slot-tag">b5</span><span class="slot-val">— yakında —</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <div id="page-about" class="page">
+    <canvas id="about-canvas"></canvas>
+    <div class="page-content" id="about-content">
+      <div id="glass-window">
+        <div id="window-titlebar">
+          <div class="win-controls">
+            <span class="win-btn win-close"></span>
+            <span class="win-btn win-min"></span>
+            <span class="win-btn win-max"></span>
+          </div>
+          <span class="win-title">proje-hakkinda.arma</span>
+          <div class="win-actions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </div>
+        </div>
+        <div id="window-body">
+          <div id="video-pane">
+            <div id="video-placeholder">
+              <div id="video-bg-overlay"></div>
+              <div id="video-scanlines"></div>
+              <button id="play-btn" aria-label="Videoyu oynat" onclick="playStreamableVideo()">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <div id="video-label">
+                <span>ARMA</span>
+                <span id="video-label-sub">Tanıtım Videosu</span>
+              </div>
+            </div>
+            <iframe id="streamable-video" 
+              src="https://streamable.com/e/cikp1a" 
+              frameborder="0" 
+              width="100%" 
+              height="100%" 
+              allowfullscreen 
+              allow="autoplay"
+              style="display:none; position:absolute; inset:0; width:100%; height:100%; background:#000;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /app-scene -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
